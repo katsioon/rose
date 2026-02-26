@@ -138,9 +138,3 @@ rose-bot/
     ├── db.py           # Database schema & init
     └── helpers.py      # Shared embed helpers
 ```
-
----
-
-## ⭐ Patreon Setup Guide
-
-See the included **PATREON_SETUP.md** for a full step-by-step guide to launching your Patreon page for Rosé Bot, including tier pricing, benefit descriptions, and how to connect it to your Discord server.
