@@ -138,3 +138,6 @@ rose-bot/
     ├── db.py           # Database schema & init
     └── helpers.py      # Shared embed helpers
 ```
+
+
+Official Bot that is already hosted/created by me ~ https://discord.com/oauth2/authorize?client_id=1473825746379083982
