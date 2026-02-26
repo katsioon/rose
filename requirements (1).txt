@@ -1,0 +1,6 @@
+nextcord
+aiosqlite
+aiohttp
+psutil
+python-dotenv
+pynacl
