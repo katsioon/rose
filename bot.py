@@ -35,8 +35,8 @@ COGS = [
 ]
 
 # Support server config — set these in .env
-SUPPORT_GUILD_ID   = int(os.getenv("SUPPORT_GUILD_ID",   "1474017191597965375"))   # your support server ID
-GUILD_LOG_CHANNEL  = int(os.getenv("GUILD_LOG_CHANNEL_ID", "1475316550218158111")) # channel to log joins/leaves
+SUPPORT_GUILD_ID   = int(os.getenv("SUPPORT_GUILD_ID",   "1435"))   # your support server ID
+GUILD_LOG_CHANNEL  = int(os.getenv("GUILD_LOG_CHANNEL_ID", "1111")) # channel to log joins/leaves
 
 intents = nextcord.Intents.default()
 intents.members = True        # member join/leave events
@@ -71,7 +71,7 @@ class Rosé(commands.Bot):
         log.info(f"Rosé ready as {self.user} ({self.user.id})")
         await self.change_presence(activity=nextcord.Activity(
             type=nextcord.ActivityType.watching,
-            name="@katsioon | Katsi's Apts"
+            name="paint dry"
         ))
 
     async def _load_premium(self):
@@ -137,12 +137,12 @@ class Rosé(commands.Bot):
                     "> `/help` — see all commands\n"
                     "> `/settings language` — switch to Dutch or other languages 🇳🇱\n\n"
                     "**Links:**\n"
-                    "> 💬 [Support Server](https://discord.gg/rKajpSCGKF)\n"
-                    "> ⭐ [Patreon (Premium)](https://patreon.com/katsioon)"
+                    "> 💬 [Support Server](https://discord.com/app)\n"
+                    "> ⭐ [Patreon (Premium)](https://patreon.com/)"
                 ),
                 color=0xF4A261,
             )
-            embed.set_footer(text="Rosé • discord.gg/rKajpSCGKF")
+            embed.set_footer(text="Rosé • discord.com")
             await ch.send(embed=embed)
 
     # ── guild leave ────────────────────────────────────────────────────────────
@@ -228,5 +228,4 @@ for cog in COGS:
     except Exception as e:
         log.error(f"Failed to load {cog}: {e}")
 
-TOKEN = os.getenv("DISCORD_TOKEN", "MTQ3MzgyNTc0NjM3OTA4Mzk4Mg.GLJTI5.9tYTpcEik5dDmJYyzsPAVDn1MsKyIld53q7eJM")
-bot.run(TOKEN)
+TOKEN = os.getenv("DISCORD_TOKEN", ""
