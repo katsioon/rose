@@ -89,8 +89,8 @@ HF_MODEL=mistralai/Mistral-7B-Instruct-v0.3
 
 ### ⭐ Premium (`/premium`)
 `info` · `status`
-- Subscribe: https://patreon.com/katsioon
-- Join server: https://discord.gg/rKajpSCGKF
+- Subscribe: https://patreon.com/
+- Join server: https://discord.gg/rKajpSCGKf
 
 ---
 
