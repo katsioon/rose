@@ -1,6 +1,48 @@
-nextcord
-aiosqlite
-aiohttp
-psutil
-python-dotenv
-pynacl
+"""
+Requirements for Advanced Discord Bot
+"""
+
+# Core Discord & Bot Framework
+disnake==2.10.0
+python-dotenv==1.0.0
+
+# Database
+pymongo==4.6.0
+motor==3.3.2
+
+# API & HTTP
+aiohttp==3.9.1
+requests==2.31.0
+
+# OpenAI (Free models)
+openai==1.3.0
+
+# Music & Streaming
+yt-dlp==2024.1.1
+wavelink==3.4.0
+
+# Weather & News
+python-weather==0.2.3
+newsapi==0.1.1
+
+# Movie Database
+tmdb-python==0.0.6
+
+# Amazon & Web Scraping
+amazon-paapi==2.0.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# Image Processing & Download
+pillow==10.1.0
+aiofiles==23.2.1
+
+# Translation
+google-cloud-translate==3.14.1
+google-generativeai==0.3.0
+
+# Utilities
+pyyaml==6.0.1
+python-dateutil==2.8.2
+pytz==2023.3
+validators==0.22.0
