@@ -63,7 +63,7 @@ class Rosé(commands.Bot):
         except Exception:
             return "en"
 
-    # ── ready ──────────────────────────────────────────────────────────────────
+    # ── ready ───────────────────────────────────────────────────────────[...]
     async def on_ready(self):
         os.makedirs("data", exist_ok=True)
         await init_db(self.db_path)
@@ -116,7 +116,7 @@ class Rosé(commands.Bot):
         except Exception as e:
             log.warning(f"Could not send guild log: {e}")
 
-    # ── guild join ─────────────────────────────────────────────────────────────
+    # ── guild join ─────────────────────────────────────────────────────────[...]
     async def on_guild_join(self, guild: nextcord.Guild):
         log.info(f"Joined guild: {guild.name} ({guild.id})")
         async with aiosqlite.connect(self.db_path) as db:
@@ -145,12 +145,12 @@ class Rosé(commands.Bot):
             embed.set_footer(text="Rosé • discord.com")
             await ch.send(embed=embed)
 
-    # ── guild leave ────────────────────────────────────────────────────────────
+    # ── guild leave ────────────────────────────────────────────────────────[...]
     async def on_guild_remove(self, guild: nextcord.Guild):
         log.info(f"Left guild: {guild.name} ({guild.id})")
         await self._log_guild_event(guild, joined=False)
 
-    # ── member join ────────────────────────────────────────────────────────────
+    # ── member join ────────────────────────────────────────────────────────[...]
     async def on_member_join(self, member: nextcord.Member):
         async with aiosqlite.connect(self.db_path) as db:
             async with db.execute(
@@ -173,7 +173,7 @@ class Rosé(commands.Bot):
         if inv_tracking:
             await self._track_invite(member)
 
-    # ── member leave ───────────────────────────────────────────────────────────
+    # ── member leave ────────────────────────────────────────────────────────[...]
     async def on_member_remove(self, member: nextcord.Member):
         async with aiosqlite.connect(self.db_path) as db:
             async with db.execute(
@@ -192,7 +192,7 @@ class Rosé(commands.Bot):
             embed.set_thumbnail(url=member.display_avatar.url)
             await ch.send(embed=embed)
 
-    # ── invite tracking ────────────────────────────────────────────────────────
+    # ── invite tracking ───────────────────────────────────────────────────────[...]
     async def _track_invite(self, member: nextcord.Member):
         try:
             invites = await member.guild.invites()
@@ -228,4 +228,10 @@ for cog in COGS:
     except Exception as e:
         log.error(f"Failed to load {cog}: {e}")
 
-TOKEN = os.getenv("DISCORD_TOKEN", ""
+TOKEN = os.getenv("DISCORD_TOKEN")
+if not TOKEN:
+    log.error("❌ DISCORD_TOKEN not found in .env file")
+    exit(1)
+
+if __name__ == "__main__":
+    bot.run(TOKEN)
